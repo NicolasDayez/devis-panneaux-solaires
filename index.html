@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title id="pt">Installateur Panneau Solaire France | solaire-photovoltaique-pro.fr</title>
+<title id="pt">Installateur Panneau Solaire France | devis-panneauxsolaires.fr</title>
 <meta id="pd" name="description" content="Trouvez un installateur panneau solaire certifié RGE. Devis gratuit en 24h. MaPrimeRénov 2025.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -180,7 +180,7 @@ function mailSec(c1,c2,c3){
 
 // ===== FOOTER =====
 function foot(){return`<footer>
-  <p>© solaire-photovoltaique-pro.fr – Mise en relation installateurs panneaux solaires certifiés RGE</p>
+  <p>© devis-panneauxsolaires.fr – Mise en relation installateurs panneaux solaires certifiés RGE</p>
   <div><a href="#">Mentions Légales</a><a href="#">Confidentialité</a><a href="#">Contact</a></div>
 </footer>`;}
 
@@ -226,7 +226,7 @@ DEPS.forEach(d=>{d.villes.forEach(v=>{if(!VILLE_MAP[v.slug])VILLE_MAP[v.slug]={n
 TOP20.forEach(v=>{VILLE_MAP[v.slug]={nom:v.nom,slug:v.slug,dep_slug:v.dep_slug,dep_nom:v.dep_nom,dep_code:v.dep_code,pop:v.population,proches:v.proches};});
 // ===== PAGE HOME =====
 function pgHome(){
-  document.title='Installateur Panneau Solaire France | solaire-photovoltaique-pro.fr';
+  document.title='Installateur Panneau Solaire France | devis-panneauxsolaires.fr';
   const villesGrid=TOP20.map(v=>`<div class="card-link" onclick="nav('/ville/${v.slug}/')"><span class="card-ico">☀️</span>Installateur ${v.nom}<span class="card-badge">${(v.population/1000).toFixed(0)}k</span></div>`).join('');
   const depsGrid=DEPS.map(d=>`<div class="card-link" onclick="nav('/departement/${d.slug}/')"><span class="card-ico">🗺️</span>${d.nom}<span class="card-badge">${d.code}</span></div>`).join('');
   return hdr()+`
@@ -388,7 +388,7 @@ function pgHome(){
 function pgDept(slug){
   const dep=DEP_MAP[slug];
   if(!dep)return pgHome();
-  document.title=`Installateur Panneau Solaire ${dep.nom} (${dep.code}) | solaire-photovoltaique-pro.fr`;
+  document.title=`Installateur Panneau Solaire ${dep.nom} (${dep.code}) | devis-panneauxsolaires.fr`;
   const villesCards=dep.villes.map(v=>`<div class="card-link" onclick="nav('/ville/${v.slug}/')"><span class="card-ico">☀️</span>${v.nom}${v.pop>0?`<span class="card-badge">${(v.pop/1000).toFixed(0)}k</span>`:''}</div>`).join('');
   const voisinsCards=dep.voisins.map(d=>`<div class="card-link" onclick="nav('/departement/${d.slug}/')"><span class="card-ico">🗺️</span>${d.nom}<span class="card-badge">${d.code}</span></div>`).join('');
   const t20Cards=TOP20.map(v=>`<div class="card-link" onclick="nav('/ville/${v.slug}/')"><span class="card-ico">☀️</span>${v.nom}<span class="card-badge">${v.dep_code}</span></div>`).join('');
@@ -430,7 +430,7 @@ ${dep.voisins.length?`<div class="cards-sec"><div class="cards-hd"><h2>Départem
 function pgVille(slug){
   const vd=VILLE_MAP[slug];
   if(!vd)return pgHome();
-  document.title=`Installateur Panneau Solaire ${vd.nom} | solaire-photovoltaique-pro.fr`;
+  document.title=`Installateur Panneau Solaire ${vd.nom} | devis-panneauxsolaires.fr`;
   const dep=DEP_MAP[vd.dep_slug];
   const proches=vd.proches||[];
   const villesDept=dep?dep.villes.filter(v=>v.slug!==slug):[]; 
