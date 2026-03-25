@@ -143,40 +143,7 @@ footer a:hover{color:var(--sun)}
 <script>
 // ===== FORM avec action réelle =====
 function renderForm(city='', dept='', pageNom='') {
-  const cpVal = dept || city || '';
-  const hidden = pageNom ? `<input type="hidden" name="page_origine" value="${pageNom}">` : '';
-  return `<div class="fcard">
-  <h3>🔒 Formulaire de Devis Gratuit</h3>
-  <form action="https://installateurpanneauxsolaires.dayez-nicolas.workers.dev" method="POST">
-    ${hidden}
-    <div class="fg"><input type="text" name="nom" placeholder="Nom / Prénom *" required></div>
-    <div class="fg"><input type="email" name="email" placeholder="Email *" required></div>
-    <div class="fg"><input type="tel" name="tel" placeholder="Téléphone *" required></div>
-    <div class="frow">
-      <div class="fg">
-        <select name="projet">
-          <option value="">Type de projet</option>
-          <option>Maison individuelle</option>
-          <option>Appartement</option>
-          <option>Commerce / Bureau</option>
-          <option>Exploitation agricole</option>
-        </select>
-      </div>
-      <div class="fg"><input type="text" name="cp" placeholder="Code postal *" value="${cpVal}" required></div>
-    </div>
-    <div class="fg">
-      <select name="puissance">
-        <option value="">Puissance souhaitée</option>
-        <option>3 kWc (petit foyer)</option>
-        <option>6 kWc (foyer moyen)</option>
-        <option>9 kWc (grande maison)</option>
-        <option>12 kWc et +</option>
-      </select>
-    </div>
-    <button type="submit" class="btn-cta">🔒 Obtenir Mon Devis Gratuit</button>
-  </form>
-  <p class="fnote">Sans engagement · Réponse sous 24h · 100% gratuit</p>
-</div>`;}
+  return `<div style="width:100%;max-width:500px"><iframe src="https://www.viteundevis.com/in/?pid=2422&iframe=1&c=37" width="100%" height="1500" frameborder="0"></iframe></div>`;}
 
 // ===== HEADER =====
 function hdr(crumb) {
